@@ -18,7 +18,8 @@ function Home() {
           <img alt="add persons" className="img_home" src={img_AddPerson} />
         </Link>
       </div>
-      
+      <div class='separator'/>
+      <br/>
       <Outlet />
     </div>
   );

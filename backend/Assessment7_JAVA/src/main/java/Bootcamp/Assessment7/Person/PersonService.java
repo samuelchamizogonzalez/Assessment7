@@ -20,8 +20,8 @@ public class PersonService {
 
     public void addPerson(Person person) {
         Person newPerson = new Person();
-        newPerson.setFirsname(person.getFirsname());
-        newPerson.setLastname(person.getLastname());
+        newPerson.setFirstName(person.getFirstName());
+        newPerson.setLastName(person.getLastName());
         newPerson.setUsername(person.getUsername());
         newPerson.setPassword(person.getPassword());
         personRepository.save(newPerson);

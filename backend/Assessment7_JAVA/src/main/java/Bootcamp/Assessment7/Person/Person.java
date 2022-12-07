@@ -10,9 +10,9 @@ public class Person {
     @Column
     private Integer Id;
     @Column
-    private String firsname;
+    private String firstName;
     @Column
-    private String lastname;
+    private String lastName;
     @Column
     private String username;
     @Column
@@ -21,9 +21,9 @@ public class Person {
     public Person() {
     }
 
-    public Person(String firsname, String lastname, String username, String password) {
-        this.firsname = firsname;
-        this.lastname = lastname;
+    public Person(String firstName, String lastName, String username, String password) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.username = username;
         this.password = password;
     }
@@ -36,20 +36,18 @@ public class Person {
         Id = id;
     }
 
-    public String getFirsname() {
-        return firsname;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setFirsname(String firsname) {
-        this.firsname = firsname;
+    public void setFirstName(String firstName) { this.firstName = firstName; }
+
+    public String getLastName() {
+        return lastName;
     }
 
-    public String getLastname() {
-        return lastname;
-    }
-
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getUsername() {

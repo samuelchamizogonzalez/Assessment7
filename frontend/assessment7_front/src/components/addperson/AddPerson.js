@@ -1,6 +1,9 @@
 import { React, useState } from "react";
+import './AddPerson.css'
 
 const handleSubmit = () => {
+  let _form = document.getElementById('form');
+  _form.reset();
   alert("Person added successfully");
 };
 
@@ -14,19 +17,14 @@ function AddPerson() {
     let _username = document.querySelector('input[name="username"]').value;
     let _password = document.querySelector('input[name="password"]').value;
     
-    console.log(_firstName);
-    console.log(_lastName);
-    console.log(_username);
-    console.log(_password);
-    
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
     var raw = JSON.stringify({
       firstName: _firstName ,
-      lastName: _lastName, 
-      username: _username, 
-      password: _password
+      lastName: _lastName,
+      username: _username,
+      password: _password 
     });
 
     var requestOptions = {
@@ -44,29 +42,25 @@ function AddPerson() {
 
   return (
     <div className="addPerson">
-      <h1>Add Person</h1>
-      <form method="POST" autoComplete="off">
-        <label type="text">
-          Firstname:
-          <input type="text" className="input_label" name="firstName" />
-        </label>
-        <br />
-        <label type="text">
-          Lastname:
-          <input type="text" className="input_label" name="lastName" />
-        </label>
-        <br />
-        <label type="text">
-          Username:
-          <input type="text" className="input_label" name="username" />
-        </label>
-        <br />
-        <label type="text">
-          Password:
-          <input type="text" className="input_label" name="password" />
-        </label>
-        <br />
-        <input type="submit" value="Submit" onClick={submitHandler} />
+      <form method="POST" autoComplete="off" id="form">
+        <div class="form-group">
+          <label>Firstname</label>
+          <input type="text" class="form-control" name="firstName" placeholder="Enter firstname"/>
+        </div>
+        <div class="form-group">
+          <label>Lastname</label>
+          <input type="text" class="form-control" name="lastName" placeholder="Enter lastname"/>
+        </div>
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" class="form-control" name="username" placeholder="Enter username"/>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" class="form-control" name="password" placeholder="Enter password"/>
+        </div>
+        <br/>
+        <input type="submit" class="btn btn-primary" value="Submit" onClick={submitHandler} />
       </form>
     </div>
   );
