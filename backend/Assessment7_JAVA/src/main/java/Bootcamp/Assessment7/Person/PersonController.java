@@ -14,11 +14,6 @@ public class PersonController {
         this.personService = personService;
     }
 
-    @GetMapping(path = "/saludo")
-    public String saludo(){
-        return "Holaaa";
-    }
-
     @GetMapping(path = "/getPersons")
     public ArrayList<Person> getPersons(){
         return personService.getPersons();
